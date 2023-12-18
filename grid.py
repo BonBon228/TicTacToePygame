@@ -4,9 +4,9 @@ from cell import Cell
 
 # Class representing the game grid
 class Grid:
-    # Initialize the grid with a renderer, dimensions, cell size, and margin
-    def __init__(self, renderer, width, height, cell_size, margin):
-        self.renderer = renderer
+    # Initialize the grid with a ui, dimensions, cell size, and margin
+    def __init__(self, ui, width, height, cell_size, margin):
+        self.ui = ui
         self.width = width
         self.height = height
         self.cell_size = cell_size
@@ -18,15 +18,15 @@ class Grid:
     def initialize_grid(self):
         for i in range(self.margin, self.width - self.margin, self.cell_size):
             for j in range(self.margin, self.height - self.margin, self.cell_size):
-                self.cells.append(Cell(i, j, self.renderer))
+                self.cells.append(Cell(i, j, self.ui))
 
     # Draw the grid lines on the screen
     def draw_grid(self):
         line_color = (70, 130, 180)
         for i in range(self.margin, self.width, self.cell_size):
-            self.renderer.draw_line((i, self.margin), (i, self.height - self.margin), line_color)
+            self.ui.draw_line((i, self.margin), (i, self.height - self.margin), line_color)
         for j in range(self.margin, self.height, self.cell_size):
-            self.renderer.draw_line((self.margin, j), (self.width - self.margin, j), line_color)
+            self.ui.draw_line((self.margin, j), (self.width - self.margin, j), line_color)
 
     # Check if all cells in the grid are filled
     def is_cells_filled(self):
@@ -83,4 +83,4 @@ class Grid:
             else:  # vertical movement
                 start = (cells[0].x + self.cell_size // 2, cells[0].y)
                 end = (cells[-1].x + self.cell_size // 2, cells[-1].y + self.cell_size)
-            pygame.draw.line(self.renderer.screen, (0, 0, 0), start, end, self.cell_size // 10)
+            pygame.draw.line(self.ui.screen, (0, 0, 0), start, end, self.cell_size // 10)

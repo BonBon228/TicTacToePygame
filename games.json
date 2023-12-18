@@ -237,6 +237,23 @@
             },
             {
                 "name": "Player 2"
+            },
+            {
+                "name": "Player 3"
+            },
+            {
+                "name": "Player 4"
+            }
+        ]
+    },
+    {
+        "winner": "Player 1",
+        "players": [
+            {
+                "name": "Player 1"
+            },
+            {
+                "name": "Player 2"
             }
         ]
     },
@@ -375,6 +392,23 @@
             },
             {
                 "name": "Player 2"
+            }
+        ]
+    },
+    {
+        "winner": "Player 4",
+        "players": [
+            {
+                "name": "Player 1"
+            },
+            {
+                "name": "Player 2"
+            },
+            {
+                "name": "Player 3"
+            },
+            {
+                "name": "Player 4"
             }
         ]
     },

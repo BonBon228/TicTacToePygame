@@ -3,11 +3,11 @@ import pygame
 
 # Class representing an individual cell in the grid
 class Cell:
-    # Initialize a cell with a position and renderer
-    def __init__(self, x, y, renderer):
+    # Initialize a cell with a position and ui
+    def __init__(self, x, y, ui):
         self.x = x
         self.y = y
-        self.renderer = renderer
+        self.ui = ui
         self.filled_player = None
 
     # Fill the cell with a player's symbol
@@ -21,7 +21,7 @@ class Cell:
     def draw(self, cell_size):
         if self.filled_player is not None:
             image = pygame.transform.scale(self.filled_player.image_symbol, (cell_size, cell_size))
-            self.renderer.screen.blit(image, (self.x, self.y))
+            self.ui.screen.blit(image, (self.x, self.y))
 
     # Check if any adjacent cells are already filled
     def is_adjacent_filled(self, cells, cell_size):
