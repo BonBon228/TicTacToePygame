@@ -237,6 +237,17 @@
             },
             {
                 "name": "Player 2"
+            }
+        ]
+    },
+    {
+        "winner": "Player 1",
+        "players": [
+            {
+                "name": "Player 1"
+            },
+            {
+                "name": "Player 2"
             },
             {
                 "name": "Player 3"
